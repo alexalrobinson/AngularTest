@@ -9,7 +9,9 @@
       crossorigin="anonymous"
     />
   </head>
-  <body ng-controller="balancedBracesController">
+  <body>
+    <h2 class="fs-2" >Balanced String Test</h2>
+    <h4 class="fs-4">Check if your string has a corresponding closing character for each open character for each pair below.</h4>
     <div class="container">
       <button
         ng-repeat="pair in pairsList"
@@ -19,9 +21,7 @@
       >
         {{ pair.name }}: {{pair.chars[0]}} {{pair.chars[1]}}
       </button>
-      <div class="card">
-        <div class="card-body">This is some text within a card body.</div>
-      </div>
+      
     </div>
   </body>
 </html>

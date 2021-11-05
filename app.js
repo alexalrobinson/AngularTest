@@ -9,6 +9,8 @@ angular
         { name: 'Square Brackets', chars: ['[', ']'] },
         { name: 'Paranthesis', chars: ['(', ')'] }
       ]
+
+      $scope.checkedWords = []
     }
   ])
   .directive('balancedBracesTest', () => {
