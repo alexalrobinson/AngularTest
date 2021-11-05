@@ -1,9 +1,9 @@
 //this is defining the app module and the balancedBracesTest directive within that module
 angular
   .module('app', [])
-  .controller('Controller', [
+  .controller('balancedBracesController', [
     '$scope',
-    function ($scope) {
+    $scope => {
       $scope.pairsList = [
         { name: 'Brackets', chars: ['{', '}'] },
         { name: 'Square Brackets', chars: ['[', ']'] },
