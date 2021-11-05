@@ -4,11 +4,11 @@ angular
   .controller('Controller', [
     '$scope',
     function ($scope) {
-      $scope.pairsToBalance = {
-        Brackets: ['{', '}'],
-        Square_Brackets: ['[', ']'],
-        Paranthesis: ['(', ')']
-      }
+      $scope.pairsList = [
+        { name: 'Brackets', chars: ['{', '}'] },
+        { name: 'Square Brackets', chars: ['[', ']'] },
+        { name: 'Paranthesis', chars: ['(', ')'] }
+      ]
     }
   ])
   .directive('balancedBracesTest', () => {
