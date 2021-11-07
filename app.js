@@ -51,6 +51,7 @@ angular
 
       $scope.checkWord = () => {
         const word = $scope.wordToCheck
+        $scope.wordToCheck = ''
 
         if (word === '') return
 
@@ -64,14 +65,17 @@ angular
 
             // word is not balanced
             if (char !== $scope.pairsLookUp.open[lastOpenChar]) {
-              $scope.checkedWordsHistory.unshift({ word, balanced: false })
+              $scope.checkedWordsHistory.unshift({
+                word,
+                balanced: 'Not Balanced'
+              })
               return
             }
           }
         }
 
         // word is balanced
-        $scope.checkedWordsHistory.unshift({ word, balanced: true })
+        $scope.checkedWordsHistory.unshift({ word, balanced: 'Balanced' })
       }
     }
   ])

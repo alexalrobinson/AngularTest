@@ -24,11 +24,11 @@
       <button ng-click="addPair=true" ng-hide="addPair" class="btn btn-primary btn-sm m-1">+</button>
 
       <div ng-show="addPair">
-        <div class="input-group">
+        <div class="input-group m-1">
           <span class="input-group-text">Name of Character Pair</span>
           <input ng-model="newPairName" placeholder="Name of Character Pair" type="text" aria-label="Name" class="form-control">
         </div>
-        <div class="input-group">
+        <div class="input-group m-1">
           <span class="input-group-text">Character Pair</span>
           <input ng-model="newOpenChar" placeholder="Open Character" type="text" aria-label="Opening" class="form-control">
           <input ng-model="newClosingChar" placeholder="Closing Character" type="text" aria-label="Closing" class="form-control">
@@ -37,8 +37,15 @@
         <button ng-click="addNewPair()" class="btn btn-primary">Add</button>
       </div>
 
-      <input ng-hide="addPair" ng-model="wordToCheck" ng-enter="checkWord()" placeholder="Word to Check" type="text" class="form-control"/>
-      <p ng-repeat="checkedWord in checkedWordsHistory">{{checkedWord.word}}: {{checkedWord.balanced}}</p> 
+      <input ng-hide="addPair" ng-model="wordToCheck" ng-enter="checkWord()" placeholder="Word to Check" type="text" class="form-control m-1"/>
+      <div class="card" ng-show="checkedWordHistory.length > 0">
+        <div class="card-header">
+          History
+        </div>
+        <ul class="list-group list-group-flush">
+          <li ng-repeat="checkedWord in checkedWordsHistory" class="list-group-item">{{checkedWord.word}}: {{checkedWord.balanced}}</li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
