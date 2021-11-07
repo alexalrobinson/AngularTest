@@ -67,7 +67,7 @@ angular
           } else if (char in $scope.pairsLookUp.close) {
             const lastOpenChar = openingChars.pop()
 
-            // word is not balanced
+            // word is not balanced if closing char does not match open char
             if (char !== $scope.pairsLookUp.open[lastOpenChar]) {
               $scope.checkedWordsHistory.unshift({
                 word,
@@ -78,8 +78,18 @@ angular
           }
         }
 
-        // word is balanced
-        $scope.checkedWordsHistory.unshift({ word, balanced: 'Balanced' })
+        // word is not balanced if any open chars have not been closed
+        if (openingChars.length !== 0) {
+          $scope.checkedWordsHistory.unshift({
+            word,
+            balanced: 'Not Balanced'
+          })
+        }
+
+        //otherwise, word is balanced
+        else {
+          $scope.checkedWordsHistory.unshift({ word, balanced: 'Balanced' })
+        }
       }
     }
   ])
