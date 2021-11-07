@@ -33,12 +33,12 @@
           <input ng-model="newOpenChar" placeholder="Open Character" type="text" aria-label="Opening" class="form-control">
           <input ng-model="newClosingChar" placeholder="Closing Character" type="text" aria-label="Closing" class="form-control">
         </div>
-        <button ng-click="addPair=false" class="btn btn-secondary">Cancel</button>
-        <button ng-click="addNewPair()" class="btn btn-primary">Add</button>
+        <button ng-click="addPair=false" class="btn btn-secondary mb-1">Cancel</button>
+        <button ng-click="addNewPair()" class="btn btn-primary mb-1">Add</button>
       </div>
 
       <input ng-hide="addPair" ng-model="wordToCheck" ng-enter="checkWord()" placeholder="Word to Check" type="text" class="form-control m-1"/>
-      <div class="card" ng-show="checkedWordsHistory.length > 0">
+      <div class="card mt-1" ng-show="checkedWordsHistory.length > 0">
         <div class="card-header">
           History
         </div>
