@@ -65,6 +65,7 @@ angular
             // word is not balanced
             if (char !== $scope.pairsLookUp.open[lastOpenChar]) {
               $scope.checkedWordsHistory.unshift({ word, balanced: false })
+              return
             }
           }
         }
