@@ -38,7 +38,7 @@
       </div>
 
       <input ng-hide="addPair" ng-model="wordToCheck" ng-enter="checkWord()" placeholder="Word to Check" type="text" class="form-control"/>
-      <p ng-repeat="checkedWord in checkedWordsHistory">{{checkedWord.name}}: {{checkedWord.balanced}}</p> 
+      <p ng-repeat="checkedWord in checkedWordsHistory">{{checkedWord.word}}: {{checkedWord.balanced}}</p> 
     </div>
   </body>
 </html>
