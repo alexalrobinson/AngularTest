@@ -43,10 +43,14 @@ angular
           newClosingChar: close
         } = $scope
 
+        $scope.newPairName = ''
+        $scope.newOpenChar = ''
+        $scope.newClosingChar = ''
+        $scope.addPair = false
+
         $scope.pairsList.push({ name, chars: [open, close] })
         $scope.pairsLookUp.open[open] = close
         $scope.pairsLookUp.close[close] = open
-        $scope.addPair = false
       }
 
       $scope.checkWord = () => {
