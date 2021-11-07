@@ -23,9 +23,9 @@
       </button>
       <button ng-click="addPair=true" ng-hide="addPair" class="btn btn-primary btn-sm m-1">+</button> 
       <div ng-show="addPair">
-        <input ng-model="newPairName" type="text"/>
-        <input ng-model="newOpenChar" type="text"/>
-        <input ng-model="newClosingChar" type="text"/>
+        <input ng-model="newPairName" type="text" placeholder="Name of Character Pair"/>
+        <input ng-model="newOpenChar" type="text" placeholder="Open Character"/>
+        <input ng-model="newClosingChar" type="text" placeholder="Closing Character"/>
         <button ng-click="addPair=false">Cancel</button>
         <button ng-click="addNewPair()">Add</button>
       </div>
