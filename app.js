@@ -44,8 +44,8 @@ angular
         } = $scope
 
         $scope.pairsList.push({ name, chars: [open, close] })
-        $scope.pairsLookUp.open.push({ open: close })
-        $scope.pairsLookUp.close.push({ close: open })
+        $scope.pairsLookUp.open[open] = close
+        $scope.pairsLookUp.close[close] = open
         $scope.addPair = false
       }
 
