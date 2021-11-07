@@ -21,15 +21,23 @@
       >
         {{ pair.name }} | {{pair.chars[0]}} {{pair.chars[1]}}
       </button>
-      <button ng-click="addPair=true" ng-hide="addPair" class="btn btn-primary btn-sm m-1">+</button> 
+      <button ng-click="addPair=true" ng-hide="addPair" class="btn btn-primary btn-sm m-1">+</button>
+
       <div ng-show="addPair">
-        <input ng-model="newPairName" type="text" class="form-control" placeholder="Name of Character Pair"/>
-        <input ng-model="newOpenChar" type="text" class="form-control" placeholder="Open Character"/>
-        <input ng-model="newClosingChar" type="text" class="form-control" placeholder="Closing Character"/>
-        <button ng-click="addPair=false">Cancel</button>
-        <button ng-click="addNewPair()">Add</button>
+        <div class="input-group">
+          <span class="input-group-text">Name of Character Pair</span>
+          <input ng-model="newPairName" placeholder="Name of Character Pair" type="text" aria-label="Name" class="form-control">
+        </div>
+        <div class="input-group">
+          <span class="input-group-text">Character Pair</span>
+          <input ng-model="newOpenChar" placeholder="Open Character" type="text" aria-label="Opening" class="form-control">
+          <input ng-model="newClosingChar" placeholder="Closing Character" type="text" aria-label="Closing" class="form-control">
+        </div>
+        <button ng-click="addPair=false" class="btn btn-secondary">Cancel</button>
+        <button ng-click="addNewPair()" class="btn btn-primary">Add</button>
       </div>
-      <input ng-hide="addPair" ng-model="wordToCheck" ng-enter="checkWord()" type="text" class="form-control"/>
+
+      <input ng-hide="addPair" ng-model="wordToCheck" ng-enter="checkWord()" placeholder="Word to Check" type="text" class="form-control"/>
       <p ng-repeat="checkedWord in checkedWordsHistory">{checkedWord.name}: {checkedWord.balanced}</p> 
     </div>
   </body>

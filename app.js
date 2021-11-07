@@ -38,14 +38,14 @@ angular
       // functions
       $scope.addNewPair = () => {
         const {
-          pairsLookUp,
           newPairName: name,
           newOpenChar: open,
           newClosingChar: close
         } = $scope
 
         $scope.pairsList.push({ name, chars: [open, close] })
-        $scope.pairsLookUp = { ...pairsLookUp, newOpenChar: newClosingChar }
+        $scope.pairsLookUp.open.push({ open: close })
+        $scope.pairsLookUp.close.push({ close: open })
         $scope.addPair = false
       }
 
